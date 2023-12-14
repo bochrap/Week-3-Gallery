@@ -23,7 +23,6 @@ thumbnails.forEach(function (thumb, index) {
     thumbSrc = thumb.src;
     imgSrc = thumbSrc.replace("Thumb", "");
     displayedImg.src = imgSrc;
-    console.log(index);
   });
 });
 
@@ -55,6 +54,10 @@ function setmiddle(index) {
 
   thumbnails[3].src = srcArray[plusIndex];
   thumbnails[4].src = srcArray[plus2Index];
+
+  thumbSrc = thumbnails[2].src;
+  imgSrc = thumbSrc.replace("Thumb", "");
+  displayedImg.src = imgSrc;
 
   middleImage = index;
 
