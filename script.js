@@ -1,5 +1,6 @@
 const thumbnails = document.querySelectorAll(".thumbnails img");
 let displayedImg = document.querySelector(".displayed");
+const welcomeScreen = document.getElementById("welcome-screen");
 
 // scriptObject.src = URL
 
