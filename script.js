@@ -2,6 +2,8 @@ const thumbnails = document.querySelectorAll(".thumbnails img");
 let displayedImg = document.querySelector(".displayed");
 let announcer = document.getElementById("announcer");
 
+let middleImage = null;
+
 // scriptObject.src = URL
 
 let srcArray = [
@@ -39,8 +41,6 @@ thumbnails.forEach(function (thumb, index) {
 //   "photo9",
 // ];
 
-let middleImage = null;
-
 function setmiddle(index) {
   let minus2Index = (index - 2 + srcArray.length) % srcArray.length;
   let minusIndex = (index - 1 + srcArray.length) % srcArray.length;
@@ -77,8 +77,20 @@ btnNext.addEventListener("click", function () {
   setmiddle((middleImage + 1) % srcArray.length);
 });
 
+document.addEventListener("keydown", function (event) {
+  if (event.code == "ArrowRight") {
+    btnNext.click();
+  }
+});
+
 btnPrev.addEventListener("click", function () {
   setmiddle((middleImage - 1 + srcArray.length) % srcArray.length);
+});
+
+document.addEventListener("keydown", function (event) {
+  if (event.code == "ArrowLeft") {
+    btnPrev.click();
+  }
 });
 
 setmiddle(0);
