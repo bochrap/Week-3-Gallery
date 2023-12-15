@@ -13,6 +13,15 @@ body {
   height: 100px;
 }
 
+.visually-hidden {
+  top: 0;
+  left: -2px;
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  overflow: hidden;
+}
+
 /* #announcer {
   display: none;
 } */
