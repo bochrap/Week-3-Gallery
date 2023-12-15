@@ -21,6 +21,21 @@ let srcArray = [
   "./images/ImageThumb12.jpg",
 ];
 
+let imageDescriptions = [
+  "Well lit underground pass to exits 6 and 7 with wlaas covered in random pattern, white and blue mosaic",
+  "Bank station of London Underground with people silhouettes down the platform and large ad posters on right wall  ",
+  "Bank station's platform with train standing on the right, people walking down the platform, four benches by the left wall and bank station's emblem on it",
+  "Person with a backpack, all in blacks, head turned to the left, so the face is not visible. In front blurry train- obviously in motion",
+  "Very long, beige, tubular passage with a spine of lights running along the whole ceiling. End barely visible. Person walking away, half way through, on the right side",
+  "Multiple sets of stairs and escalators. Gray concrete walls and ceiling On the higher level metal and glass dome with sun shining through. People using escalator on the right",
+  "London by night. On the left enterance to the underground. Next to it- street with blurry double-decker bus surrounded by buildings. Flares visible from street lanterns",
+  "Man turned away, checking his phone. In front of him train's car with closed door. Man's reflection visible in door's window",
+  "Blurry train, moving fast on Euston station. Above it- sign with platform's details ",
+  "Close up photo of illuminated London Underground logo. Building in the back",
+  "Tube station, with train approaching the station. One person down the platform",
+  "Empty platform with fast-moving train. Well lit",
+];
+
 thumbnails.forEach(function (thumb, index) {
   thumb.addEventListener("click", function () {
     thumbSrc = thumb.src;
