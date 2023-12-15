@@ -36,25 +36,14 @@ let imageDescriptions = [
   "Empty platform with fast-moving train. Well lit",
 ];
 
-thumbnails.forEach(function (thumb, index) {
+thumbnails.forEach(function (thumb) {
   thumb.addEventListener("click", function () {
-    thumbSrc = thumb.src;
-    imgSrc = thumbSrc.replace("Thumb", "");
-    displayedImg.src = imgSrc;
+    // thumbSrc = thumb.src;
+    // imgSrc = thumbSrc.replace("Thumb", "");
+    // displayedImg.src = imgSrc;
+    let getIndex = (thumbnails[2].src = srcArray[index]);
   });
 });
-
-// let items = [
-//   "photo1",
-//   "photo2",
-//   "photo3",
-//   "photo4",
-//   "photo5",
-//   "photo6",
-//   "photo7",
-//   "photo8",
-//   "photo9",
-// ];
 
 function setmiddle(index) {
   let minus2Index = (index - 2 + srcArray.length) % srcArray.length;
@@ -66,7 +55,6 @@ function setmiddle(index) {
   thumbnails[1].src = srcArray[minusIndex];
 
   thumbnails[2].src = srcArray[index];
-  // console.log(`Middle image is ${srcArray[index]}`);
   announcer.textContent = `Currently displaying image of ${imageDescriptions[index]}`;
 
   thumbnails[3].src = srcArray[plusIndex];
@@ -78,12 +66,6 @@ function setmiddle(index) {
   displayedImg.alt = `${imageDescriptions[index]}`;
 
   middleImage = index;
-
-  // console.log(items[minus2Index]);
-  // console.log(items[minusIndex]);
-  // console.log(items[index] + "<--SELECTED ");
-  // console.log(items[plusIndex]);
-  // console.log(items[plus2Index]);
 }
 
 const btnNext = document.getElementById("next");
