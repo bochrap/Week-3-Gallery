@@ -13,6 +13,9 @@ body {
   height: 100px;
 }
 
+/* #announcer {
+  display: none;
+} */
 /* .thumbnails img:hover {
   animation: thumb-reg-in 200ms ease-in;
   animation-fill-mode: forwards;

@@ -1,5 +1,6 @@
 const thumbnails = document.querySelectorAll(".thumbnails img");
 let displayedImg = document.querySelector(".displayed");
+let announcer = document.getElementById("announcer");
 
 // scriptObject.src = URL
 
@@ -50,7 +51,8 @@ function setmiddle(index) {
   thumbnails[1].src = srcArray[minusIndex];
 
   thumbnails[2].src = srcArray[index];
-  console.log(`Middle image is ${srcArray[index]}`);
+  // console.log(`Middle image is ${srcArray[index]}`);
+  announcer.textContent = `Currently displaying image of ${srcArray[index]}`;
 
   thumbnails[3].src = srcArray[plusIndex];
   thumbnails[4].src = srcArray[plus2Index];
