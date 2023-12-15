@@ -11,6 +11,8 @@ body {
 
 .thumbnails img {
   height: 100px;
+  min-width: 150px;
+  max-width: 150px;
 }
 
 .visually-hidden {
@@ -75,7 +77,6 @@ body {
   justify-content: center;
   border: 1px solid black;
   padding: 0.5rem;
-  left: 10%;
   background-color: #a9a9a998;
 }
 
