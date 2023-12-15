@@ -93,17 +93,23 @@ button {
 @media (max-width: 1032px) {
   .thumbnails img {
     height: 60px;
+    min-width: 90px;
+    max-width: 90px;
   }
 }
 
 @media (max-width: 746px) {
   .thumbnails img {
     height: 40px;
+    min-width: 60px;
+    max-width: 60px;
   }
 }
 
 @media (max-width: 600px) {
   .thumbnails img {
     height: 25px;
+    min-width: 38px;
+    max-width: 38px;
   }
 }
