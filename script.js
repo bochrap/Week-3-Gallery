@@ -3,6 +3,7 @@ let displayedImg = document.querySelector(".displayed");
 let announcer = document.getElementById("announcer");
 
 let middleImage = null;
+let thumbIndex = [];
 
 // scriptObject.src = URL
 
@@ -36,12 +37,10 @@ let imageDescriptions = [
   "Empty platform with fast-moving train. Well lit",
 ];
 
-thumbnails.forEach(function (thumb) {
+thumbnails.forEach(function (thumb, index) {
   thumb.addEventListener("click", function () {
-    // thumbSrc = thumb.src;
-    // imgSrc = thumbSrc.replace("Thumb", "");
-    // displayedImg.src = imgSrc;
-    let getIndex = (thumbnails[2].src = srcArray[index]);
+    let setMiddleIndex = thumbIndex[index];
+    setmiddle(setMiddleIndex);
   });
 });
 
@@ -52,13 +51,20 @@ function setmiddle(index) {
   let plus2Index = (index + 2) % srcArray.length;
 
   thumbnails[0].src = srcArray[minus2Index];
+  thumbIndex[0] = minus2Index;
+
   thumbnails[1].src = srcArray[minusIndex];
+  thumbIndex[1] = minusIndex;
 
   thumbnails[2].src = srcArray[index];
   announcer.textContent = `Currently displaying image of ${imageDescriptions[index]}`;
+  thumbIndex[2] = index;
 
   thumbnails[3].src = srcArray[plusIndex];
+  thumbIndex[3] = plusIndex;
+
   thumbnails[4].src = srcArray[plus2Index];
+  thumbIndex[4] = plus2Index;
 
   thumbSrc = thumbnails[2].src;
   imgSrc = thumbSrc.replace("Thumb", "");
