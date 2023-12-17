@@ -50,16 +50,6 @@ function setmiddle(index) {
   let plusIndex = (index + 1) % srcArray.length;
   let plus2Index = (index + 2) % srcArray.length;
 
-  // let imgSrc25 = imgSrc.replace("Image", "25Image");
-  // let imgSrc50 = imgSrc.replace("Image", "50Image");
-  // let imgSrc75 = imgSrc.replace("Image", "75Image");
-  // displayedImg.alt = `${imageDescriptions[index]}`;
-  // console.log("Setting srcset...");
-  // displayedImg.srcset = `${imgSrc25} 1032w, ${imgSrc50} 746w, ${imgSrc75} 600w`;
-  // // console.log(imgSrc);
-  // // console.log(displayedImg.srcset);
-  // console.log("Loaded image:", displayedImg.currentSrc);
-
   thumbnails[0].src = srcArray[minus2Index];
   thumbIndex[0] = minus2Index;
 
@@ -79,6 +69,13 @@ function setmiddle(index) {
   thumbSrc = thumbnails[2].src;
   imgSrc = thumbSrc.replace("Thumb", "");
   displayedImg.src = imgSrc;
+
+  let imgSrc25 = imgSrc.replace("Image", "25Image");
+  let imgSrc50 = imgSrc.replace("Image", "50Image");
+  let imgSrc75 = imgSrc.replace("Image", "75Image");
+  displayedImg.alt = `${imageDescriptions[index]}`;
+  console.log("Setting srcset...");
+  displayedImg.srcset = `${imgSrc25} 2064w, ${imgSrc50} 1492w, ${imgSrc75} 1200w`;
 
   middleImage = index;
 }
