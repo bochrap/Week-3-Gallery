@@ -50,19 +50,15 @@ function setmiddle(index) {
   let plusIndex = (index + 1) % srcArray.length;
   let plus2Index = (index + 2) % srcArray.length;
 
-  thumbSrc = thumbnails[2].src;
-  imgSrc = thumbSrc.replace("Thumb", "");
-  displayedImg.src = imgSrc;
-
-  let imgSrc25 = imgSrc.replace("Image", "25Image");
-  let imgSrc50 = imgSrc.replace("Image", "50Image");
-  let imgSrc75 = imgSrc.replace("Image", "75Image");
-  displayedImg.alt = `${imageDescriptions[index]}`;
-  console.log("Setting srcset...");
-  displayedImg.srcset = `${imgSrc25} 1032w, ${imgSrc50} 746w, ${imgSrc75} 600w`;
-  // console.log(imgSrc);
-  // console.log(displayedImg.srcset);
-  console.log("Loaded image:", displayedImg.currentSrc);
+  // let imgSrc25 = imgSrc.replace("Image", "25Image");
+  // let imgSrc50 = imgSrc.replace("Image", "50Image");
+  // let imgSrc75 = imgSrc.replace("Image", "75Image");
+  // displayedImg.alt = `${imageDescriptions[index]}`;
+  // console.log("Setting srcset...");
+  // displayedImg.srcset = `${imgSrc25} 1032w, ${imgSrc50} 746w, ${imgSrc75} 600w`;
+  // // console.log(imgSrc);
+  // // console.log(displayedImg.srcset);
+  // console.log("Loaded image:", displayedImg.currentSrc);
 
   thumbnails[0].src = srcArray[minus2Index];
   thumbIndex[0] = minus2Index;
@@ -79,6 +75,10 @@ function setmiddle(index) {
 
   thumbnails[4].src = srcArray[plus2Index];
   thumbIndex[4] = plus2Index;
+
+  thumbSrc = thumbnails[2].src;
+  imgSrc = thumbSrc.replace("Thumb", "");
+  displayedImg.src = imgSrc;
 
   middleImage = index;
 }
@@ -103,6 +103,16 @@ btnPrev.addEventListener("click", function () {
 document.addEventListener("keydown", function (event) {
   if (event.code == "ArrowLeft") {
     btnPrev.click();
+  }
+});
+
+document.addEventListener("keydown", function (event) {
+  if (event.code === "Space") {
+    // Check if a thumbnail is currently focused
+    if (document.activeElement && document.activeElement.tagName === "IMG") {
+      // Trigger a click event on the focused thumbnail
+      document.activeElement.click();
+    }
   }
 });
 

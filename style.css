@@ -104,6 +104,12 @@ button {
     min-width: 60px;
     max-width: 60px;
   }
+  .thumbnails img:first-of-type {
+    display: none;
+  }
+  .thumbnails img:last-of-type {
+    display: none;
+  }
 }
 
 @media (max-width: 600px) {
@@ -111,5 +117,8 @@ button {
     height: 25px;
     min-width: 38px;
     max-width: 38px;
+  }
+  .thumbnails img {
+    display: none;
   }
 }
